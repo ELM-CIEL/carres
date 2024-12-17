@@ -1,40 +1,41 @@
 #include <iostream>
 #include "carre.h"
 
+using namespace std;
+
 int main() {
     const int nbCarres = 4;
-    CCarre carres[nbCarres];
 
-    for (int i = 0; i < nbCarres; ++i) {
-        carres[i].Setsx(10 * (i + 1));
-        carres[i].Setsy(20 * (i + 1));
-        carres[i].Setcote(5 * (i + 1));
-    }
+    CCarre carres[nbCarres] = {
+        CCarre(10, 20, 5),
+        CCarre(20, 40, 10),
+        CCarre(30, 60, 15),
+        CCarre(40, 80, 20)
+    };
 
-    std::cout << "Affichage initial des 4 carres :";
+    cout << "Affichage des 4 carres apres initialisation:" << endl;
     for (int i = 0; i < nbCarres; ++i) {
-        std::cout << "Carre " << i + 1 << " : ";
+        cout << "Carre " << i + 1 << " : ";
         carres[i].Afficher();
     }
 
-    std::cout << "Deplacement des carres :";
+    cout << "\nDeplacement des carres :" << endl;
 
     for (int i = 0; i < nbCarres; ++i) {
-
         carres[i].Deplacer('n', 5);
-        std::cout << "Carre " << i + 1 << " apres deplacement vers le Nord : ";
+        cout << "Carre " << i + 1 << " deplacement vers le Nord : ";
         carres[i].Afficher();
 
         carres[i].Deplacer('e', 10);
-        std::cout << "Carre " << i + 1 << " apres deplacement vers l'Est : ";
+        cout << "Carre " << i + 1 << " deplacement vers l'Est : ";
         carres[i].Afficher();
 
         carres[i].Deplacer('s', 5);
-        std::cout << "Carre " << i + 1 << " apres deplacement vers le Sud : ";
+        cout << "Carre " << i + 1 << " deplacement vers le Sud : ";
         carres[i].Afficher();
 
         carres[i].Deplacer('o', 10);
-        std::cout << "Carre " << i + 1 << " apres deplacement vers l'Ouest : ";
+        cout << "Carre " << i + 1 << " deplacement vers l'Ouest : ";
         carres[i].Afficher();
     }
 

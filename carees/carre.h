@@ -7,6 +7,8 @@ private:
     int sy;
     unsigned int cote; 
 public:
+    CCarre();
+    CCarre(int sx1, int sy1, unsigned int cote1);
     void Setsx(int sx1);
     void Setsy(int sy1);
     void Setcote(unsigned int cote1); 
